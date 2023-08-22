@@ -2,14 +2,14 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-18 16:57:42
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-08-21 16:23:46
+ * @LastEditTime: 2023-08-22 09:32:22
  * @FilePath: \vital-admin\packages\vital-admin\vite.config.ts
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
  */
 import { fileURLToPath, URL } from 'node:url'
-
+import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -36,7 +36,8 @@ export default defineConfig({
     }),
     Components({
       resolvers: [NaiveUiResolver()]
-    })
+    }),
+    UnoCSS()
   ],
   resolve: {
     alias: {
