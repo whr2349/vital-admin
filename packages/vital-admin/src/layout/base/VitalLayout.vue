@@ -1,46 +1,82 @@
 <!--
  * @Author: whr2349 378237242@QQ.com
- * @Date: 2023-08-18 16:57:42
+ * @Date: 2023-08-23 16:58:58
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-08-24 10:01:08
- * @FilePath: \vital-admin\packages\vital-admin\src\App.vue
+ * @LastEditTime: 2023-08-24 16:02:20
+ * @FilePath: \vital-admin\packages\vital-admin\src\layout\base\VitalLayout.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
 <template>
-  <n-config-provider>
-    <!-- <n-layout content-style="height:100vh;">
-      <n-layout-header bordered>
-        <div class=""><SystemLogo :show-title="collapsed"></SystemLogo></div>
-      </n-layout-header>
-      <n-layout-content bordered class="">
-        <n-layout has-sider content-style="height: 800px;">
-          <n-layout-sider
-            bordered
-            :collapsed="collapsed"
-            show-trigger
-            collapse-mode="width"
-            :collapsed-width="64"
-            :width="240"
-            :native-scrollbar="false"
-            @update:collapsed="siderUpdate"
-          >
-            <n-menu :collapsed-width="64" :collapsed-icon-size="20" :options="menuOptions" />
-          </n-layout-sider>
-          <n-layout>
-            <n-layout-content content-style="padding: 24px;"> content </n-layout-content>
-            <n-layout-footer>footer</n-layout-footer>
-          </n-layout>
+  <div class="h-screen relative">
+    <n-layout bordered position="absolute">
+      <n-layout has-sider class="h-16">
+        <n-layout-sider
+          bordered
+          content-style="overflow: hidden;"
+          :collapsed="collapsed"
+          collapse-mode="width"
+          :collapsed-width="64"
+          :width="240"
+          @update:collapsed="siderUpdate"
+          class="border-0 border-solid border-b-1 border-slate-100"
+        >
+          <SystemLogo :show-title="collapsed"></SystemLogo>
+        </n-layout-sider>
+        <n-layout
+          bordered
+          class="border-0 border-solid border-b-1 border-slate-100"
+          content-style="overflow: hidden;display:flex;align-items:center;"
+        >
+          <HeaderLayout></HeaderLayout>
         </n-layout>
-      </n-layout-content>
-    </n-layout> -->
-    <VitalLayout></VitalLayout>
-  </n-config-provider>
+      </n-layout>
+
+      <n-layout has-sider position="absolute" style="top: 64px">
+        <n-layout-sider
+          bordered
+          content-style=""
+          :collapsed="collapsed"
+          show-trigger
+          collapse-mode="width"
+          :collapsed-width="64"
+          :width="240"
+          :native-scrollbar="false"
+          @update:collapsed="siderUpdate"
+        >
+          <n-menu :collapsed-width="64" :collapsed-icon-size="22" :options="menuOptions" />
+        </n-layout-sider>
+        <n-layout content-style="padding: 24px;" :native-scrollbar="false">
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-h2>平山道</n-h2>
+          <n-layout-footer bordered position="absolute" style="height: 64px; padding: 24px">
+            城府路
+          </n-layout-footer>
+        </n-layout>
+      </n-layout>
+    </n-layout>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { h, type Component, ref } from 'vue'
+<script setup lang="ts">
+import { h, ref, type Component } from 'vue'
 import { NIcon } from 'naive-ui'
 import {
   BookOutline as BookIcon,
@@ -48,11 +84,14 @@ import {
   WineOutline as WineIcon
 } from '@vicons/ionicons5'
 import SystemLogo from '@/components/common/system-logo/SystemLogo.vue'
-import VitalLayout from './layout/base/VitalLayout.vue'
 function renderIcon(icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) })
 }
+import HeaderLayout from '@/layout/components/HeaderLayout.vue'
 
+defineOptions({
+  name: 'VitalLayout'
+})
 const collapsed = ref(false)
 const menuOptions = [
   {
@@ -367,3 +406,5 @@ const siderUpdate = (value: boolean) => {
   collapsed.value = value
 }
 </script>
+
+<style scoped></style>

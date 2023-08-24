@@ -1,0 +1,93 @@
+<!--
+ * @Author: whr2349 378237242@QQ.com
+ * @Date: 2023-08-24 16:06:14
+ * @LastEditors: whr2349 378237242@QQ.com
+ * @LastEditTime: 2023-08-24 17:21:44
+ * @FilePath: \vital-admin\packages\vital-admin\src\layout\components\VitalOptions.vue
+ * @Description: 
+ * 
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+-->
+<template>
+  <div>
+    <n-drawer v-model:show="active" :width="350" :placement="placement">
+      <n-drawer-content closable title="斯通纳">
+        <n-form
+          ref="formRef"
+          :model="model"
+          label-placement="left"
+          require-mark-placement="right-hanging"
+          label-align="left"
+        >
+          <n-form-item label="暗黑" path="switchValue">
+            <n-switch v-model:value="model.switchValue" />
+          </n-form-item>
+          <n-form-item label="Checkbox Group" path="checkboxGroupValue">
+            <n-checkbox-group v-model:value="model.checkboxGroupValue">
+              <n-space>
+                <n-checkbox value="Option 1"> Option 1 </n-checkbox>
+                <n-checkbox value="Option 2"> Option 2 </n-checkbox>
+                <n-checkbox value="Option 3"> Option 3 </n-checkbox>
+              </n-space>
+            </n-checkbox-group>
+          </n-form-item>
+          <n-form-item label="Radio Group" path="radioGroupValue">
+            <n-radio-group v-model:value="model.radioGroupValue" name="radiogroup1">
+              <n-space>
+                <n-radio value="Radio 1"> Radio 1 </n-radio>
+                <n-radio value="Radio 2"> Radio 2 </n-radio>
+                <n-radio value="Radio 3"> Radio 3 </n-radio>
+              </n-space>
+            </n-radio-group>
+          </n-form-item>
+
+        </n-form>
+      </n-drawer-content>
+    </n-drawer>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+import type { DrawerPlacement } from 'naive-ui'
+const active = ref(false)
+const placement = ref<DrawerPlacement>('right')
+const activate = (place: DrawerPlacement) => {
+  active.value = true
+  placement.value = place
+}
+const deActivate = (place: DrawerPlacement) => {
+  active.value = true
+  placement.value = place
+}
+const changeActivate = () => {
+  active.value = !active.value
+}
+const model: Ref = ref({
+  inputValue: null,
+  textareaValue: null,
+  selectValue: null,
+  multipleSelectValue: null,
+  datetimeValue: null,
+  nestedValue: {
+    path1: null,
+    path2: null
+  },
+  switchValue: false,
+  checkboxGroupValue: null,
+  radioGroupValue: null,
+  radioButtonGroupValue: null,
+  inputNumberValue: null,
+  timePickerValue: null,
+  sliderValue: 0,
+  transferValue: null
+})
+defineExpose({
+  activate,
+  deActivate,
+  changeActivate
+})
+</script>
+
+<style scoped></style>
