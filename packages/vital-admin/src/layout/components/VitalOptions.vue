@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-24 16:06:14
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-08-24 17:21:44
+ * @LastEditTime: 2023-08-25 15:38:45
  * @FilePath: \vital-admin\packages\vital-admin\src\layout\components\VitalOptions.vue
  * @Description: 
  * 
@@ -18,29 +18,11 @@
           label-placement="left"
           require-mark-placement="right-hanging"
           label-align="left"
+          class="vital-options"
         >
-          <n-form-item label="暗黑" path="switchValue">
-            <n-switch v-model:value="model.switchValue" />
+          <n-form-item label="暗黑" path="darkPatterns">
+            <n-switch v-model:value="model.darkPatterns" />
           </n-form-item>
-          <n-form-item label="Checkbox Group" path="checkboxGroupValue">
-            <n-checkbox-group v-model:value="model.checkboxGroupValue">
-              <n-space>
-                <n-checkbox value="Option 1"> Option 1 </n-checkbox>
-                <n-checkbox value="Option 2"> Option 2 </n-checkbox>
-                <n-checkbox value="Option 3"> Option 3 </n-checkbox>
-              </n-space>
-            </n-checkbox-group>
-          </n-form-item>
-          <n-form-item label="Radio Group" path="radioGroupValue">
-            <n-radio-group v-model:value="model.radioGroupValue" name="radiogroup1">
-              <n-space>
-                <n-radio value="Radio 1"> Radio 1 </n-radio>
-                <n-radio value="Radio 2"> Radio 2 </n-radio>
-                <n-radio value="Radio 3"> Radio 3 </n-radio>
-              </n-space>
-            </n-radio-group>
-          </n-form-item>
-
         </n-form>
       </n-drawer-content>
     </n-drawer>
@@ -48,9 +30,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import type { Ref } from 'vue'
 import type { DrawerPlacement } from 'naive-ui'
+import { useThemeStore } from '@/stores'
+
 const active = ref(false)
 const placement = ref<DrawerPlacement>('right')
 const activate = (place: DrawerPlacement) => {
@@ -65,23 +49,11 @@ const changeActivate = () => {
   active.value = !active.value
 }
 const model: Ref = ref({
-  inputValue: null,
-  textareaValue: null,
-  selectValue: null,
-  multipleSelectValue: null,
-  datetimeValue: null,
-  nestedValue: {
-    path1: null,
-    path2: null
-  },
-  switchValue: false,
-  checkboxGroupValue: null,
-  radioGroupValue: null,
-  radioButtonGroupValue: null,
-  inputNumberValue: null,
-  timePickerValue: null,
-  sliderValue: 0,
-  transferValue: null
+  darkPatterns: false
+})
+watchEffect(() => {
+  // 更新主题
+  useThemeStore().changeDarkPatterns(model.value.darkPatterns)
 })
 defineExpose({
   activate,
@@ -90,4 +62,13 @@ defineExpose({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+:deep(.vital-options .n-form-item .n-form-item-blank) {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  position: relative;
+  width: 100%;
+}
+</style>
