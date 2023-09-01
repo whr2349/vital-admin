@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-24 16:06:14
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-08-25 15:38:45
+ * @LastEditTime: 2023-09-01 11:07:35
  * @FilePath: \vital-admin\packages\vital-admin\src\layout\components\VitalOptions.vue
  * @Description: 
  * 
@@ -11,7 +11,7 @@
 <template>
   <div>
     <n-drawer v-model:show="active" :width="350" :placement="placement">
-      <n-drawer-content closable title="斯通纳">
+      <n-drawer-content closable title="主题配置">
         <n-form
           ref="formRef"
           :model="model"
