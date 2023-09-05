@@ -27,6 +27,12 @@ importers:
       '@types/node':
         specifier: ^18.17.0
         version: 18.17.0
+      '@vicons/antd':
+        specifier: ^0.12.0
+        version: 0.12.0
+      '@vicons/utils':
+        specifier: ^0.1.4
+        version: 0.1.4(vue@3.3.4)
       '@vitejs/plugin-vue':
         specifier: ^4.2.3
         version: 4.2.3(vite@4.4.6)(vue@3.3.4)
@@ -1320,6 +1326,10 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==, tarball: http://10.68.7.155:7001/@types/minimist/download/@types/minimist-1.2.2.tgz}
     dev: true
 
+  /@types/node@14.14.45:
+    resolution: {integrity: sha512-DssMqTV9UnnoxDWu959sDLZzfvqCF0qDNRjaWeYSui9xkFe61kKo4l1TWNTQONpuXEm+gLMRvdlzvNHBamzmEw==}
+    dev: true
+
   /@types/node@18.17.0:
     resolution: {integrity: sha512-GXZxEtOxYGFchyUzxvKI14iff9KZ2DI+A6a37o6EQevtg6uO9t+aUZKcaC1Te5Ng1OnLM7K9NVVj+FbecD9cJg==, tarball: http://10.68.7.155:7001/@types/node/download/@types/node-18.17.0.tgz}
     dev: true
@@ -1656,8 +1666,21 @@ packages:
       - rollup
     dev: true
 
+  /@vicons/antd@0.12.0:
+    resolution: {integrity: sha512-C0p6aO1EmGG1QHrqgUWQS1No20934OdWSRQshM5NIDK5H1On6tC26U0hT6Rmp40KfUsvhvX5YW8BoWJdNFifPg==}
+    dev: true
+
   /@vicons/ionicons5@0.12.0:
     resolution: {integrity: sha512-Iy1EUVRpX0WWxeu1VIReR1zsZLMc4fqpt223czR+Rpnrwu7pt46nbnC2ycO7ItI/uqDLJxnbcMC7FujKs9IfFA==}
+    dev: true
+
+  /@vicons/utils@0.1.4(vue@3.3.4):
+    resolution: {integrity: sha512-OHI19qVNN6i+uPQ+Y3f2s0dUxwsYnOCcKBW7XOU4yXXO1aU3ZoKpblCc3+4N0qmgoJs5rWKRAaMisipqEXJwAg==}
+    peerDependencies:
+      vue: ^3.0.6
+    dependencies:
+      '@xicons/utils': 0.1.4
+      vue: 3.3.4
     dev: true
 
   /@vitejs/plugin-vue-jsx@3.0.1(vite@4.4.6)(vue@3.3.4):
@@ -1882,6 +1905,12 @@ packages:
       '@vue/language-core': 1.8.6(typescript@5.1.6)
     transitivePeerDependencies:
       - typescript
+    dev: true
+
+  /@xicons/utils@0.1.4:
+    resolution: {integrity: sha512-uXxKDLz9abr80yJC05XSTq6wlyFcdW+N/1IYJkeHjzzXVc4VQ0sEYMoMMTjAH7HQBOyOkzOB4pf5NGF72lwa8Q==}
+    dependencies:
+      css-render: 0.13.9
     dev: true
 
   /@yarnpkg/lockfile@1.1.0:
@@ -2584,6 +2613,14 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+    dev: true
+
+  /css-render@0.13.9:
+    resolution: {integrity: sha512-n3C4ZH59rveBrUlAD7n0Ze9/gUMKa4dlH1C9CWKpGcIHR/xRcIVXzBGy1iw8WWq2ySmn2/ZqOpySQNAK5Pb6sw==}
+    dependencies:
+      '@emotion/hash': 0.8.0
+      '@types/node': 14.14.45
+      csstype: 3.0.11
     dev: true
 
   /css-render@0.15.12:
