@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-24 10:24:34
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-08-24 16:55:19
+ * @LastEditTime: 2023-08-25 09:50:36
  * @FilePath: \vital-admin\packages\vital-admin\src\layout\components\HeaderLayout.vue
  * @Description: 
  * 
@@ -24,6 +24,8 @@
 <script setup lang="ts">
 import { Cog } from '@vicons/ionicons5'
 import VitalOptions from '@/layout/components/VitalOptions.vue'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 const VitalOptionsRef: Ref = ref(null)
 const changeActivate = () => VitalOptionsRef.value.changeActivate()
 </script>
