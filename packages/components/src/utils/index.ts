@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 16:56:32
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-05 08:48:53
+ * @LastEditTime: 2023-09-05 08:51:16
  * @FilePath: \vital-admin\packages\components\src\utils\index.ts
  * @Description:
  *
