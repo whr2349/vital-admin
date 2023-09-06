@@ -2,11 +2,8 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-23 16:58:58
  * @LastEditors: whr2349 378237242@QQ.com
-<<<<<<< HEAD
  * @LastEditTime: 2023-09-04 10:28:57
-=======
  * @LastEditTime: 2023-09-01 15:22:21
->>>>>>> 747fa33ec81e69c9674110c24686f412cd2bc920
  * @FilePath: \vital-admin\packages\vital-admin\src\layout\base\VitalLayout.vue
  * @Description: 
  * 
@@ -37,11 +34,7 @@
         </n-layout>
       </n-layout> -->
       <n-layout-header bordered>
-<<<<<<< HEAD
-        <n-layout has-sider class="h-16 border-0 border-solid border-b-1 border-default-border">
-=======
         <n-layout has-sider class="h-16">
->>>>>>> 747fa33ec81e69c9674110c24686f412cd2bc920
           <n-layout-sider
             bordered
             content-style="overflow: hidden;"
@@ -73,11 +66,7 @@
           <n-menu :collapsed-width="64" :collapsed-icon-size="22" :options="menuOptions" />
         </n-layout-sider>
         <n-layout :native-scrollbar="false">
-<<<<<<< HEAD
-          <n-layout-content content-style="ma" :native-scrollbar="false">
-=======
           <n-layout-content content-style="padding: 24px;" :native-scrollbar="false">
->>>>>>> 747fa33ec81e69c9674110c24686f412cd2bc920
             <n-h2>平山道</n-h2>
             <n-h2>平山道</n-h2>
             <n-h2>平山道</n-h2>
@@ -97,11 +86,7 @@
             <n-h2>平山道</n-h2>
             <n-h2>平山道</n-h2>
           </n-layout-content>
-<<<<<<< HEAD
-          <n-layout-footer bordered position="absolute" style="height: 34px">
-=======
           <n-layout-footer bordered position="absolute" style="height: 34px;">
->>>>>>> 747fa33ec81e69c9674110c24686f412cd2bc920
             城府路
           </n-layout-footer>
         </n-layout>
