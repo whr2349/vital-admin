@@ -2,8 +2,8 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 16:15:26
- * @FilePath: \vital-admin\packages\components\src\components\layout\BaseLayout.vue
+ * @LastEditTime: 2023-09-07 16:43:04
+ * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
@@ -23,7 +23,7 @@
         <slot name="logo"></slot>
       </div>
       <div
-        class="flex-1 border-solid border-0 border-gray-700/9"
+        class="flex-1 border-solid border-0 border-gray-700/9 overflow-y-auto overflow-x-hidden"
         v-if="slots['sidebar']"
         :class="{ 'border-r': showSidebarRightBorder }"
       >
@@ -55,7 +55,7 @@
         <slot name="main"></slot>
       </div>
       <div
-        class="border-solid border-0 border-gray-700/9"
+        class="border-solid border-0 border-gray-700/9 overflow-y-auto overflow-x-hidden"
         :class="{
           'border-t': showFootTopBorder
         }"
