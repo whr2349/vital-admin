@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 10:32:49
+ * @LastEditTime: 2023-09-07 11:12:06
  * @FilePath: \vital-admin\packages\components\src\components\layout\BaseLayout.vue
  * @Description: 
  * 
@@ -50,7 +50,9 @@
       >
         <slot name="head"></slot>
       </div>
-      <div class="flex-1" v-if="slots['main']"><slot name="main"></slot></div>
+      <div class="flex-1" v-if="slots['main']">
+        <slot name="main"></slot>
+      </div>
       <div
         class="border-solid border-0 border-gray-700/9"
         :class="{
@@ -69,10 +71,11 @@
 import { computed, ref, useSlots } from 'vue'
 import { LeftCircleTwotone } from '@vicons/antd'
 import { Icon } from '@vicons/utils'
+// import type { BaseLayoutSpace } from '@/types/layout'
 
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
 // props 设置默认值
-const props = withDefaults(defineProps<Partial<BaseLayoutSpace.IProps>>(), {
+const props = withDefaults(defineProps<BaseLayoutSpace.IProps>(), {
   sidebarWidth: '200px',
   sidebarCollapseWidth: '60px',
   headHeight: '60px',
