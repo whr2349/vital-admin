@@ -2,13 +2,13 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-05 16:18:06
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 14:32:46
+ * @LastEditTime: 2023-09-07 16:14:51
  * @FilePath: \vital-admin\packages\components\src\types\layout.d.ts
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
-declare namespace BaseLayoutSpace {
+ export declare namespace LayoutAttr {
   type IProps = {
     // 侧边栏宽度
     sidebarWidth: string
@@ -18,6 +18,8 @@ declare namespace BaseLayoutSpace {
     headHeight: string
     // 底部高度
     footHeight: string
+    // 是否显示收起、展开按钮
+    showSidebarCollapseButton: boolean
     // 是否显示右侧边框
     showSidebarRightBorder: boolean
     // 是否显示底部边框
@@ -25,7 +27,7 @@ declare namespace BaseLayoutSpace {
     // 是否显示右部边框
     showLogoRightBorder: boolean
     // 是否显示头部边框
-    showheadBottomBorder: boolean
+    showHeadBottomBorder: boolean
     // 是否显示底部边框
     showFootTopBorder: boolean
   }

@@ -2,11 +2,11 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 11:12:06
+ * @LastEditTime: 2023-09-07 16:15:26
  * @FilePath: \vital-admin\packages\components\src\components\layout\BaseLayout.vue
- * @Description: 
- * 
- * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
+ * @Description:
+ *
+ * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
 -->
 <template>
   <div class="h-full flex">
@@ -30,6 +30,7 @@
         <slot name="sidebar"></slot>
       </div>
       <Icon
+        v-if="props.showSidebarCollapseButton"
         class="absolute cursor-pointer right-0 inset-y-0 my-auto transition-all duration-300 translate-x-1/2 rounded-full bg-white"
         :class="{ 'rotate-180': sidebarCollapseLock }"
         size="20"
@@ -43,7 +44,7 @@
       <div
         class="border-solid border-0 border-gray-700/9"
         :class="{
-          'border-b border-r-gray-700/9': showheadBottomBorder
+          'border-b border-r-gray-700/9': showHeadBottomBorder
         }"
         :style="headStyle"
         v-if="slots['head']"
@@ -71,11 +72,12 @@
 import { computed, ref, useSlots } from 'vue'
 import { LeftCircleTwotone } from '@vicons/antd'
 import { Icon } from '@vicons/utils'
-// import type { BaseLayoutSpace } from '@/types/layout'
+
+import type { LayoutAttr } from '@/types/layout'
 
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
 // props 设置默认值
-const props = withDefaults(defineProps<BaseLayoutSpace.IProps>(), {
+const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   sidebarWidth: '200px',
   sidebarCollapseWidth: '60px',
   headHeight: '60px',
@@ -83,11 +85,11 @@ const props = withDefaults(defineProps<BaseLayoutSpace.IProps>(), {
   showSidebarRightBorder: true,
   showLogoBottomBorder: true,
   showLogoRightBorder: true,
-  showheadBottomBorder: true,
+  showHeadBottomBorder: true,
   showFootTopBorder: true,
-  abbc: 123
+  showSidebarCollapseButton: true
 })
-const emit = defineEmits<BaseLayoutSpace.IEmit>()
+const emit = defineEmits<LayoutAttr.IEmit>()
 // 获取 setupContext.slots
 const slots = useSlots()
 
