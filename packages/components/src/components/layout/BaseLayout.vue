@@ -2,8 +2,8 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-06 10:50:59
- * @FilePath: \components\src\components\layout\BaseLayout.vue
+ * @LastEditTime: 2023-09-07 10:32:49
+ * @FilePath: \vital-admin\packages\components\src\components\layout\BaseLayout.vue
  * @Description: 
  * 
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
@@ -70,24 +70,21 @@ import { computed, ref, useSlots } from 'vue'
 import { LeftCircleTwotone } from '@vicons/antd'
 import { Icon } from '@vicons/utils'
 
-const emit = defineEmits(['onSidebarCollapseChange'])
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
-// 侧边栏可收起，设置收起时的宽度
-const props = withDefaults(defineProps<BaseLayout.Props>(), {
-  // 侧边栏宽度
+// props 设置默认值
+const props = withDefaults(defineProps<Partial<BaseLayoutSpace.IProps>>(), {
   sidebarWidth: '200px',
-  // 收起宽度
   sidebarCollapseWidth: '60px',
-  // logo和head的高度
   headHeight: '60px',
-  // foot的高度
   footHeight: '40px',
   showSidebarRightBorder: true,
   showLogoBottomBorder: true,
   showLogoRightBorder: true,
   showheadBottomBorder: true,
-  showFootTopBorder: true
+  showFootTopBorder: true,
+  abbc: 123
 })
+const emit = defineEmits<BaseLayoutSpace.IEmit>()
 // 获取 setupContext.slots
 const slots = useSlots()
 
@@ -113,6 +110,7 @@ const sidebarCollapseHandler = (isCollapse: boolean) => {
   }
   emit('onSidebarCollapseChange', isCollapse)
 }
+defineExpose({ sidebarCollapseHandler })
 </script>
 
 <style scoped></style>
