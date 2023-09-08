@@ -2,8 +2,8 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-05 16:18:06
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 10:19:16
- * @FilePath: \components\src\types\layout.d.ts
+ * @LastEditTime: 2023-09-08 14:13:00
+ * @FilePath: \components\src\types\components.d.ts
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
@@ -38,5 +38,18 @@ export declare namespace LayoutAttr {
   type IEmit = {
     // 侧边栏收起事件
     (event: 'onSidebarCollapseChange', collapse: boolean): void
+  }
+}
+export declare namespace SystemLogoAttr {
+  type IProps = {
+    showTitle:boolean
+    // 宽度
+    systemLogoWidth: string
+    // 收起时宽度
+    systemLogoCollapseWidth: string
+  }
+  type IEmit = {
+    // 侧边栏收起事件
+    (event: 'onShowTitleChange', collapse: boolean): void
   }
 }
