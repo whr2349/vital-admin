@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 10:46:08
+ * @LastEditTime: 2023-09-08 10:49:34
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
@@ -31,7 +31,6 @@
         v-if="slots['sidebar']"
         :class="[
           showSidebarRightBorder ? 'border-r' : '',
-          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
         ]"
       >
         <slot name="sidebar"></slot>
@@ -49,20 +48,18 @@
     </div>
     <div class="flex-1 flex flex-col">
       <div
-        class="border-solid border-0 w-full"
+        class="border-solid border-0 w-full border-gray-700/9 dark:border-neutral-50/15"
         :class="[
           showHeadBottomBorder ? 'border-b' : '',
-          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
         ]"
         :style="headStyle"
         v-if="slots['head']"
       >
         <div
-          class="border-solid border-0"
+          class="border-solid border-0 border-gray-700/9 dark:border-neutral-50/15"
           :class="[
             showLogoRightBorder ? 'border-r' : '',
             showLogoBottomBorder ? 'border-b' : '',
-            themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
           ]"
           :style="logoStyle"
           v-if="slots['logo'] && props.layoutMode !== 'vertical'"
@@ -75,11 +72,10 @@
         <slot name="main"></slot>
       </div>
       <div
-        class="border-solid border-0 overflow-hidden"
+        class="border-solid border-0 overflow-hidden border-gray-700/9 dark:border-neutral-50/15"
         :class="[
           showFootTopBorder ? 'border-t' : '',
           showLogoBottomBorder ? 'border-b' : '',
-          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
         ]"
         :style="footStyle"
         v-if="slots['foot']"
@@ -111,7 +107,7 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showFootTopBorder: true,
   showSidebarCollapseButton: true,
   layoutMode: 'vertical',
-  themeMode: 'dark'
+  themeMode: 'light'
 })
 const emit = defineEmits<LayoutAttr.IEmit>()
 // 获取 setupContext.slots
