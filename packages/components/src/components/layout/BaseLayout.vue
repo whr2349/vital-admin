@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 10:49:34
+ * @LastEditTime: 2023-09-08 14:09:58
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
@@ -90,8 +90,7 @@
 import { computed, ref, useSlots } from 'vue'
 import { LeftCircleTwotone } from '@vicons/antd'
 import { Icon } from '@vicons/utils'
-
-import type { LayoutAttr } from '@/types/layout'
+import type { LayoutAttr } from '@/types/components'
 
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
 // props 设置默认值
@@ -147,3 +146,4 @@ defineExpose({ sidebarCollapseHandler })
 </script>
 
 <style scoped></style>
+@/types/components
