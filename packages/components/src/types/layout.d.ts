@@ -2,13 +2,13 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-05 16:18:06
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 16:14:51
- * @FilePath: \vital-admin\packages\components\src\types\layout.d.ts
+ * @LastEditTime: 2023-09-08 10:19:16
+ * @FilePath: \components\src\types\layout.d.ts
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
- export declare namespace LayoutAttr {
+export declare namespace LayoutAttr {
   type IProps = {
     // 侧边栏宽度
     sidebarWidth: string
@@ -30,8 +30,10 @@
     showHeadBottomBorder: boolean
     // 是否显示底部边框
     showFootTopBorder: boolean
-    // 模式 
-    mode: 'vertical' | 'horizontal'
+    // 布局模式
+    layoutMode: 'vertical' | 'horizontal'
+    // 主题模式
+    themeMode: 'light' | 'dark'
   }
   type IEmit = {
     // 侧边栏收起事件
