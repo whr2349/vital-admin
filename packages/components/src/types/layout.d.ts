@@ -30,6 +30,8 @@
     showHeadBottomBorder: boolean
     // 是否显示底部边框
     showFootTopBorder: boolean
+    // 模式 
+    mode: 'vertical' | 'horizontal'
   }
   type IEmit = {
     // 侧边栏收起事件

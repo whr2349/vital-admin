@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-07 16:43:04
+ * @LastEditTime: 2023-09-08 09:39:35
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
@@ -10,14 +10,18 @@
 -->
 <template>
   <div class="h-full flex">
-    <div class="flex flex-col relative transition-all duration-300" :style="sidebarStyle">
+    <div
+      class="flex flex-col relative transition-all duration-300"
+      :style="sidebarStyle"
+      v-if="props.mode === 'vertical'"
+    >
       <div
         class="border-solid border-0 border-gray-700/9"
         :class="{
           'border-r': showLogoRightBorder,
           'border-b': showLogoBottomBorder
         }"
-        :style="headStyle"
+        :style="logoStyle"
         v-if="slots['logo']"
       >
         <slot name="logo"></slot>
@@ -42,13 +46,24 @@
     </div>
     <div class="flex-1 flex flex-col">
       <div
-        class="border-solid border-0 border-gray-700/9"
+        class="border-solid border-0 border-gray-700/9 w-full"
         :class="{
           'border-b border-r-gray-700/9': showHeadBottomBorder
         }"
         :style="headStyle"
         v-if="slots['head']"
       >
+        <div
+          class="border-solid border-0 border-gray-700/9"
+          :class="{
+            'border-r': showLogoRightBorder,
+            'border-b': showLogoBottomBorder
+          }"
+          :style="logoStyle"
+          v-if="slots['logo'] && props.mode !== 'vertical'"
+        >
+          <slot name="logo"></slot>
+        </div>
         <slot name="head"></slot>
       </div>
       <div class="flex-1" v-if="slots['main']">
@@ -87,7 +102,8 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showLogoRightBorder: true,
   showHeadBottomBorder: true,
   showFootTopBorder: true,
-  showSidebarCollapseButton: true
+  showSidebarCollapseButton: true,
+  mode: 'horizontal'
 })
 const emit = defineEmits<LayoutAttr.IEmit>()
 // 获取 setupContext.slots
@@ -97,6 +113,12 @@ const sidebarStyle = ref({ width: props.sidebarWidth })
 const headStyle = computed(() => {
   return {
     height: props.headHeight
+  }
+})
+const logoStyle = computed(() => {
+  return {
+    height: props.headHeight,
+    width: props.sidebarWidth
   }
 })
 const footStyle = computed(() => {
@@ -110,8 +132,10 @@ const sidebarCollapseHandler = (isCollapse: boolean) => {
   sidebarCollapseLock.value = isCollapse
   if (sidebarCollapseLock.value) {
     sidebarStyle.value.width = props.sidebarCollapseWidth
+    logoStyle.value.width = props.sidebarCollapseWidth
   } else {
     sidebarStyle.value.width = props.sidebarWidth
+    logoStyle.value.width = props.sidebarWidth
   }
   emit('onSidebarCollapseChange', isCollapse)
 }
