@@ -2,34 +2,37 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 09:39:35
+ * @LastEditTime: 2023-09-08 10:46:08
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
 -->
 <template>
-  <div class="h-full flex">
+  <div class="h-full flex" :class="{ dark: themeMode === 'dark' }">
     <div
       class="flex flex-col relative transition-all duration-300"
       :style="sidebarStyle"
-      v-if="props.mode === 'vertical'"
+      v-if="props.layoutMode === 'vertical'"
     >
       <div
-        class="border-solid border-0 border-gray-700/9"
-        :class="{
-          'border-r': showLogoRightBorder,
-          'border-b': showLogoBottomBorder
-        }"
+        class="border-solid border-0 border-gray-700/9 dark:border-neutral-50/15"
+        :class="[
+          showLogoRightBorder ? 'border-r' : '',
+          showLogoBottomBorder ? 'border-b' : '',
+        ]"
         :style="logoStyle"
         v-if="slots['logo']"
       >
         <slot name="logo"></slot>
       </div>
       <div
-        class="flex-1 border-solid border-0 border-gray-700/9 overflow-y-auto overflow-x-hidden"
+        class="flex-1 border-solid border-0 overflow-hidden border-gray-700/9 dark:border-neutral-50/15"
         v-if="slots['sidebar']"
-        :class="{ 'border-r': showSidebarRightBorder }"
+        :class="[
+          showSidebarRightBorder ? 'border-r' : '',
+          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
+        ]"
       >
         <slot name="sidebar"></slot>
       </div>
@@ -46,34 +49,38 @@
     </div>
     <div class="flex-1 flex flex-col">
       <div
-        class="border-solid border-0 border-gray-700/9 w-full"
-        :class="{
-          'border-b border-r-gray-700/9': showHeadBottomBorder
-        }"
+        class="border-solid border-0 w-full"
+        :class="[
+          showHeadBottomBorder ? 'border-b' : '',
+          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
+        ]"
         :style="headStyle"
         v-if="slots['head']"
       >
         <div
-          class="border-solid border-0 border-gray-700/9"
-          :class="{
-            'border-r': showLogoRightBorder,
-            'border-b': showLogoBottomBorder
-          }"
+          class="border-solid border-0"
+          :class="[
+            showLogoRightBorder ? 'border-r' : '',
+            showLogoBottomBorder ? 'border-b' : '',
+            themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
+          ]"
           :style="logoStyle"
-          v-if="slots['logo'] && props.mode !== 'vertical'"
+          v-if="slots['logo'] && props.layoutMode !== 'vertical'"
         >
           <slot name="logo"></slot>
         </div>
         <slot name="head"></slot>
       </div>
-      <div class="flex-1" v-if="slots['main']">
+      <div class="flex-1 overflow-hidden" v-if="slots['main']">
         <slot name="main"></slot>
       </div>
       <div
-        class="border-solid border-0 border-gray-700/9 overflow-y-auto overflow-x-hidden"
-        :class="{
-          'border-t': showFootTopBorder
-        }"
+        class="border-solid border-0 overflow-hidden"
+        :class="[
+          showFootTopBorder ? 'border-t' : '',
+          showLogoBottomBorder ? 'border-b' : '',
+          themeMode === 'light' ? 'border-gray-700/9' : 'border-neutral-50/15'
+        ]"
         :style="footStyle"
         v-if="slots['foot']"
       >
@@ -103,7 +110,8 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showHeadBottomBorder: true,
   showFootTopBorder: true,
   showSidebarCollapseButton: true,
-  mode: 'horizontal'
+  layoutMode: 'vertical',
+  themeMode: 'dark'
 })
 const emit = defineEmits<LayoutAttr.IEmit>()
 // 获取 setupContext.slots

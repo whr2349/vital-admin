@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-08-18 17:04:20
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 09:39:56
+ * @LastEditTime: 2023-09-08 09:44:24
  * @FilePath: \components\src\App.vue
  * @Description: 
  * 
@@ -40,7 +40,7 @@ const btnClickHandler = () => {
       <div v-for="key in 100" :key="key">sidebar</div>
     </template>
     <template #head>head</template>
-    <template #main><button @click="btnClickHandler">api调用侧边栏展开和收起</button></template>
+    <template #main><button @click="btnClickHandler">api调用侧边栏展开和收起</button><div v-for="key in 100" :key="key">sidebar</div></template>
     <template #foot>foot</template>
   </BaseLayout>
 </template>
