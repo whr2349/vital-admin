@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 14:09:58
+ * @LastEditTime: 2023-09-08 15:08:28
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
@@ -105,7 +105,7 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showHeadBottomBorder: true,
   showFootTopBorder: true,
   showSidebarCollapseButton: true,
-  layoutMode: 'vertical',
+  layoutMode: 'horizontal',
   themeMode: 'light'
 })
 const emit = defineEmits<LayoutAttr.IEmit>()

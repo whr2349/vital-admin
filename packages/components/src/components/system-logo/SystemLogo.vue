@@ -11,7 +11,7 @@
 <template>
   <div class="flex items-center justify-center h-full overflow-hidden">
     <slot name="logoImg">
-      <logoSvg class="h-5 justify-center"></logoSvg>
+     
     </slot>
     <h2 class="ml-3" v-show="showTitleRef">
       <slot></slot>
@@ -21,7 +21,6 @@
 
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
-import logoSvg from './logo.svg'
 import type { SystemLogoAttr } from '@/types/components'
 
 const emit = defineEmits<SystemLogoAttr.IEmit>()
