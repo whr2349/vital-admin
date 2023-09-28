@@ -10,7 +10,7 @@
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
 import { defineConfig } from 'unocss'
-import { presetWind } from 'unocss'
+// import { presetWind } from 'unocss'
 export default defineConfig({
   // ...UnoCSS选项
   // presets: [presetWind()]
