@@ -2,7 +2,7 @@
  * @Author: whr2349 378237242@QQ.com
  * @Date: 2023-09-04 14:29:11
  * @LastEditors: whr2349 378237242@QQ.com
- * @LastEditTime: 2023-09-08 15:08:28
+ * @LastEditTime: 2023-09-08 15:18:06
  * @FilePath: \components\src\components\layout\BaseLayout.vue
  * @Description:
  *
@@ -17,10 +17,7 @@
     >
       <div
         class="border-solid border-0 border-gray-700/9 dark:border-neutral-50/15"
-        :class="[
-          showLogoRightBorder ? 'border-r' : '',
-          showLogoBottomBorder ? 'border-b' : '',
-        ]"
+        :class="[showLogoRightBorder ? 'border-r' : '', showLogoBottomBorder ? 'border-b' : '']"
         :style="logoStyle"
         v-if="slots['logo']"
       >
@@ -29,9 +26,7 @@
       <div
         class="flex-1 border-solid border-0 overflow-hidden border-gray-700/9 dark:border-neutral-50/15"
         v-if="slots['sidebar']"
-        :class="[
-          showSidebarRightBorder ? 'border-r' : '',
-        ]"
+        :class="[showSidebarRightBorder ? 'border-r' : '']"
       >
         <slot name="sidebar"></slot>
       </div>
@@ -49,18 +44,13 @@
     <div class="flex-1 flex flex-col">
       <div
         class="border-solid border-0 w-full border-gray-700/9 dark:border-neutral-50/15"
-        :class="[
-          showHeadBottomBorder ? 'border-b' : '',
-        ]"
+        :class="[showHeadBottomBorder ? 'border-b' : '']"
         :style="headStyle"
         v-if="slots['head']"
       >
         <div
           class="border-solid border-0 border-gray-700/9 dark:border-neutral-50/15"
-          :class="[
-            showLogoRightBorder ? 'border-r' : '',
-            showLogoBottomBorder ? 'border-b' : '',
-          ]"
+          :class="[showLogoRightBorder ? 'border-r' : '', showLogoBottomBorder ? 'border-b' : '']"
           :style="logoStyle"
           v-if="slots['logo'] && props.layoutMode !== 'vertical'"
         >
@@ -73,10 +63,7 @@
       </div>
       <div
         class="border-solid border-0 overflow-hidden border-gray-700/9 dark:border-neutral-50/15"
-        :class="[
-          showFootTopBorder ? 'border-t' : '',
-          showLogoBottomBorder ? 'border-b' : '',
-        ]"
+        :class="[showFootTopBorder ? 'border-t' : '', showLogoBottomBorder ? 'border-b' : '']"
         :style="footStyle"
         v-if="slots['foot']"
       >
@@ -105,7 +92,7 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showHeadBottomBorder: true,
   showFootTopBorder: true,
   showSidebarCollapseButton: true,
-  layoutMode: 'horizontal',
+  layoutMode: 'vertical',
   themeMode: 'light'
 })
 const emit = defineEmits<LayoutAttr.IEmit>()
