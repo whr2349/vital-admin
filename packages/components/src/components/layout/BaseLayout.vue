@@ -74,10 +74,10 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, useSlots } from 'vue'
-import { LeftCircleTwotone } from '@vicons/antd'
-import { Icon } from '@vicons/utils'
-import type { LayoutAttr } from '@/types/components'
+import { computed, ref, useSlots } from 'vue';
+import { LeftCircleTwotone } from '@vicons/antd';
+import { Icon } from '@vicons/utils';
+import type { LayoutAttr } from '@/types/components';
 
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
 // props 设置默认值
@@ -93,44 +93,43 @@ const props = withDefaults(defineProps<Partial<LayoutAttr.IProps>>(), {
   showFootTopBorder: true,
   showSidebarCollapseButton: true,
   layoutMode: 'vertical',
-  themeMode: 'light'
-})
-const emit = defineEmits<LayoutAttr.IEmit>()
+  themeMode: 'light',
+});
+const emit = defineEmits<LayoutAttr.IEmit>();
 // 获取 setupContext.slots
-const slots = useSlots()
+const slots = useSlots();
 
-const sidebarStyle = ref({ width: props.sidebarWidth })
+const sidebarStyle = ref({ width: props.sidebarWidth });
 const headStyle = computed(() => {
   return {
-    height: props.headHeight
-  }
-})
+    height: props.headHeight,
+  };
+});
 const logoStyle = computed(() => {
   return {
     height: props.headHeight,
-    width: props.sidebarWidth
-  }
-})
+    width: props.sidebarWidth,
+  };
+});
 const footStyle = computed(() => {
   return {
-    height: props.footHeight
-  }
-})
+    height: props.footHeight,
+  };
+});
 // 侧边栏收起按钮
-let sidebarCollapseLock = ref(false)
+let sidebarCollapseLock = ref(false);
 const sidebarCollapseHandler = (isCollapse: boolean) => {
-  sidebarCollapseLock.value = isCollapse
+  sidebarCollapseLock.value = isCollapse;
   if (sidebarCollapseLock.value) {
-    sidebarStyle.value.width = props.sidebarCollapseWidth
-    logoStyle.value.width = props.sidebarCollapseWidth
+    sidebarStyle.value.width = props.sidebarCollapseWidth;
+    logoStyle.value.width = props.sidebarCollapseWidth;
   } else {
-    sidebarStyle.value.width = props.sidebarWidth
-    logoStyle.value.width = props.sidebarWidth
+    sidebarStyle.value.width = props.sidebarWidth;
+    logoStyle.value.width = props.sidebarWidth;
   }
-  emit('onSidebarCollapseChange', isCollapse)
-}
-defineExpose({ sidebarCollapseHandler })
+  emit('onSidebarCollapseChange', isCollapse);
+};
+defineExpose({ sidebarCollapseHandler });
 </script>
 
 <style scoped></style>
-@/types/components

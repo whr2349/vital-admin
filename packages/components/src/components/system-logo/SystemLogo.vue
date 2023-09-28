@@ -10,9 +10,7 @@
 -->
 <template>
   <div class="flex items-center justify-center h-full overflow-hidden">
-    <slot name="logoImg">
-     
-    </slot>
+    <slot name="logoImg"> </slot>
     <h2 class="ml-3" v-show="showTitleRef">
       <slot></slot>
     </h2>
@@ -20,25 +18,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
-import type { SystemLogoAttr } from '@/types/components'
+import { ref, watchEffect } from 'vue';
+import type { SystemLogoAttr } from '@/types/components';
 
-const emit = defineEmits<SystemLogoAttr.IEmit>()
+const emit = defineEmits<SystemLogoAttr.IEmit>();
 const props = withDefaults(defineProps<Partial<SystemLogoAttr.IProps>>(), {
-  showTitle: true
-})
+  showTitle: true,
+});
 watchEffect(() => {
-  emit('onShowTitleChange', props.showTitle)
-})
-const showTitleRef = ref(props.showTitle)
+  emit('onShowTitleChange', props.showTitle);
+});
+const showTitleRef = ref(props.showTitle);
 const showTitleChange = (value: boolean) => {
-  console.log('showTitleChange:',value)
-  showTitleRef.value = value
-  emit('onShowTitleChange', value)
-}
+  console.log('showTitleChange:', value);
+  showTitleRef.value = value;
+  emit('onShowTitleChange', value);
+};
 defineExpose({
-  showTitleChange
-})
+  showTitleChange,
+});
 </script>
 
 <style scoped></style>
