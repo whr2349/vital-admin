@@ -1,52 +1,78 @@
 <template>
-  <BaseLayout
-    sidebarWidth="200px"
-    @onSidebarCollapseChange="onSidebarCollapseHandler"
-    :showSidebarCollapseButton="true"
-    ref="layoutRef"
-  >
-    <template #logo>
-      <SystemLogo ref="logoRef">
-        <template #logoImg>
-          <logoSvg class="h-5 justify-center"></logoSvg>
-        </template>
-        <div class="text-dark text-lg">viatl-admin</div>
-      </SystemLogo>
-    </template>
-    <template #sidebar>
-      <n-menu
-        :collapsed="collapsed"
-        :collapsed-width="64"
-        :collapsed-icon-size="22"
-        :options="menuOptions"
-        :render-label="renderMenuLabel"
-        :render-icon="renderMenuIcon"
-        :expand-icon="expandIcon"
-      />
-    </template>
-    <template #head>head</template>
-    <template #main>
-      <button @click="btnClickHandler">api调用侧边栏展开和收起</button>
-      <div v-for="key in 100" :key="key">sidebar</div></template
+  <n-config-provider inline-theme-disabled class="h-full overflow-hidden">
+    <BaseLayout
+      sidebarWidth="200px"
+      @onSidebarCollapseChange="onSidebarCollapseHandler"
+      :showSidebarCollapseButton="true"
+      ref="layoutRef"
     >
-    <template #foot>foot</template>
-  </BaseLayout>
+      <template #logo>
+        <SystemLogo ref="logoRef">
+          <template #logoImg>
+            <logoSvg class="h-5 justify-center"></logoSvg>
+          </template>
+          <div class="text-dark text-lg">viatl-admin</div>
+        </SystemLogo>
+      </template>
+      <template #sidebar>
+        <div class="h-full overflow-overlay">
+          <n-menu
+            :collapsed="menuCollapsed"
+            :collapsed-width="64"
+            :collapsed-icon-size="22"
+            :options="menuOptions"
+            :render-label="renderMenuLabel"
+            :render-icon="renderMenuIcon"
+          />
+        </div>
+      </template>
+      <template #head>
+        <div class="flex items-center justify-between h-full p-x-4">
+          <div><n-input placeholder="搜索"></n-input></div>
+          <div class="flex items-center">
+            <n-icon
+              class="cursor-pointer hover:bg-gray-900/9 rounded"
+              size="24"
+              color="#333639"
+              @click="onClickSysOpions"
+            >
+              <CodeSandboxOutlined />
+            </n-icon>
+          </div>
+        </div>
+      </template>
+      <template #main>
+        <div class="h-full">
+          <button @click="btnClickHandler">api调用侧边栏展开和收起</button>
+          <div v-for="key in 100" :key="key">sidebar</div>
+        </div>
+      </template>
+      <template #foot>foot</template>
+    </BaseLayout>
+    <SysOptionsPanel ref="sysOptionsPanelRef"></SysOptionsPanel>
+  </n-config-provider>
 </template>
 <script setup lang="ts">
 import { ref, h } from 'vue';
 import type { Ref } from 'vue';
+import { NIcon } from 'naive-ui';
+import type { MenuOption } from 'naive-ui';
+import { AliwangwangOutlined, CodeSandboxOutlined } from '@vicons/antd';
 import BaseLayout from '../components/layout/BaseLayout.vue';
 import SystemLogo from '../components/system-logo/SystemLogo.vue';
 import logoSvg from './logo.svg';
-import { NIcon, NMenu } from 'naive-ui';
-import type { MenuOption } from 'naive-ui';
-import { AliwangwangOutlined } from '@vicons/antd';
+import SysOptionsPanel from '../components/sysOptionsPanel/SysOptionsPanel.vue';
 
 defineOptions({
   name: 'DemoIndex',
 });
-const collapsed = ref(true);
+// 菜单的折叠状态
+const menuCollapsed = ref(false);
+// 定义一个函数，用于处理侧边栏折叠事件
 const onSidebarCollapseHandler = (collapse: boolean) => {
+  // 将折叠状态设置为collapse
+  menuCollapsed.value = collapse;
+  // 设置logo标题的显示状态
   logoRef.value?.showTitleChange(!collapse);
 };
 const layoutRef: Ref<InstanceType<typeof BaseLayout> | null> = ref(null);
@@ -140,8 +166,9 @@ const renderMenuIcon = (option: MenuOption) => {
   if (option.key === 'food') return null;
   return h(NIcon, null, { default: () => h(AliwangwangOutlined) });
 };
-const expandIcon = () => {
-  return h(NIcon, null, { default: () => h(AliwangwangOutlined) });
+const sysOptionsPanelRef = ref<InstanceType<typeof SysOptionsPanel> | null>(null);
+const onClickSysOpions = () => {
+  sysOptionsPanelRef.value?.changeShowState(1);
 };
 </script>
 <style scoped></style>

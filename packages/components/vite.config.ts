@@ -8,19 +8,38 @@
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
-import UnoCSS from 'unocss/vite'
-import svgLoader from 'vite-svg-loader'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import UnoCSS from 'unocss/vite';
+import svgLoader from 'vite-svg-loader';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), UnoCSS(), svgLoader()],
+  plugins: [
+    vue(),
+    AutoImport({
+      imports: [
+        'vue',
+        {
+          'naive-ui': ['useDialog', 'useMessage', 'useNotification', 'useLoadingBar'],
+        },
+      ],
+    }),
+    Components({
+      resolvers: [NaiveUiResolver()],
+    }),
+    vueJsx(),
+    UnoCSS(),
+    svgLoader(),
+  ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
-})
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+});
