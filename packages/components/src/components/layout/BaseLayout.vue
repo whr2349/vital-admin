@@ -116,8 +116,12 @@ const footStyle = computed(() => {
     height: props.footHeight,
   };
 });
-// 侧边栏收起按钮
-let sidebarCollapseLock = ref(false);
+// 侧边栏收起状态
+const sidebarCollapseLock = ref(false);
+/**
+ * 控制侧边收起展开
+ * @param isCollapse 
+ */
 const sidebarCollapseHandler = (isCollapse: boolean) => {
   sidebarCollapseLock.value = isCollapse;
   if (sidebarCollapseLock.value) {
@@ -129,7 +133,11 @@ const sidebarCollapseHandler = (isCollapse: boolean) => {
   }
   emit('onSidebarCollapseChange', isCollapse);
 };
-defineExpose({ sidebarCollapseHandler });
+//
+defineExpose({
+  // 控制侧边收起展开
+  sidebarCollapseHandler,
+});
 </script>
 
 <style scoped></style>
