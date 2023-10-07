@@ -39,6 +39,7 @@ declare module 'vue' {
     NTransfer: typeof import('naive-ui')['NTransfer']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SysOptionsPanel: typeof import('./src/components/sysOptionsPanel/SysOptionsPanel.vue')['default']
     SystemLogo: typeof import('./src/components/common/system-logo/SystemLogo.vue')['default']
   }
 }
