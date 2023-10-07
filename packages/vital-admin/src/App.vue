@@ -71,6 +71,7 @@ import { AliwangwangOutlined, CodeSandboxOutlined } from '@vicons/antd'
 import { useThemeStore } from '@/stores'
 import { BaseLayout, SystemLogo } from '@whr2349/vital-material'
 import SysOptionsPanel from '@/components/sysOptionsPanel/SysOptionsPanel.vue'
+import logoSvg from '@/assets/logo.svg';
 const theme = ref<GlobalTheme | null>(null)
 console.log(darkTheme)
 
@@ -83,9 +84,6 @@ useThemeStore().$subscribe((mutation, state) => {
   } else {
     theme.value = null
   }
-})
-defineOptions({
-  name: 'DemoIndex'
 })
 // 菜单的折叠状态
 const menuCollapsed = ref(false)
