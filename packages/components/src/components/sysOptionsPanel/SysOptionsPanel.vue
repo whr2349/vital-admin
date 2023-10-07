@@ -1,8 +1,15 @@
+<!--language: Vue-->
+<!--language: Vue-->
 <template>
   <div class="">
-    <n-drawer v-model:show="SysOptionsPanelShow" :width="400" placement="right">
-      <n-drawer-content title="斯通纳" closable>
-        《斯通纳》是美国作家约翰·威廉姆斯在 1965 年出版的小说。
+    <n-drawer v-model:show="SysOptionsPanelShow" :width="300" placement="right">
+      <n-drawer-content title="页面设置" closable>
+        <div class="flex justify-between items-center">
+          <div>顶部高度</div>
+          <div class="w-40">
+            <n-input-number :default-value="1075" :parse="parseCurrency" :format="formatCurrency" />
+          </div>
+        </div>
       </n-drawer-content>
     </n-drawer>
   </div>
@@ -15,12 +22,22 @@ defineOptions({
   name: 'SysOptionsPanel',
 });
 
-const SysOptionsPanelShow = ref(false);
-const changeShowState = (value: boolean | undefined) => {
-  // if(typeof value === 'undefined'){
-  // }
+const {
+  bool: SysOptionsPanelShow,
+  setBool: setSysOptionsPanelShow,
+  toggle: toggleSysOptionsPanelShow,
+} = useBoolean(false);
+
+const changeSysOptionsShowState = (value?: boolean) => {
+  // 如果value的类型是undefined，则执行toggleSysOptionsPanelShow函数
+  if (typeof value === 'undefined') {
+    toggleSysOptionsPanelShow();
+    // 否则，执行setSysOptionsPanelShow函数，并传入value参数
+  } else {
+    setSysOptionsPanelShow(value);
+  }
 };
-defineExpose({ changeShowState });
+defineExpose({ changeSysOptionsShowState });
 </script>
 
 <style scoped></style>

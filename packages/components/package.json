@@ -1,7 +1,7 @@
 {
   "name": "@whr2349/vital-material",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

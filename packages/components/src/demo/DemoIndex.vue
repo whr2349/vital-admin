@@ -168,7 +168,7 @@ const renderMenuIcon = (option: MenuOption) => {
 };
 const sysOptionsPanelRef = ref<InstanceType<typeof SysOptionsPanel> | null>(null);
 const onClickSysOpions = () => {
-  sysOptionsPanelRef.value?.changeShowState(1);
+  sysOptionsPanelRef.value?.changeSysOptionsShowState();
 };
 </script>
 <style scoped></style>

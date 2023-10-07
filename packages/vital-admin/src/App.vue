@@ -10,7 +10,7 @@
 -->
 <template>
   <n-config-provider :theme="theme" inline-theme-disabled>
-    <VitalLayout></VitalLayout>
+    123
   </n-config-provider>
 </template>
 
@@ -18,7 +18,6 @@
 import { ref } from 'vue'
 import { darkTheme } from 'naive-ui'
 import type { GlobalTheme } from 'naive-ui'
-import VitalLayout from './layout/base/VitalLayout.vue'
 import { useThemeStore } from '@/stores'
 const theme = ref<GlobalTheme | null>(null)
 console.log(darkTheme)
