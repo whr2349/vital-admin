@@ -37,6 +37,15 @@ const changeSysOptionsShowState = (value?: boolean) => {
     setSysOptionsPanelShow(value);
   }
 };
+const parseCurrency = (input: string) => {
+  const nums = input.replace(/(,|¥|\s)/g, '').trim();
+  if (/^\d+(\.(\d+)?)?$/.test(nums)) return Number(nums);
+  return nums === '' ? null : Number.NaN;
+};
+const formatCurrency = (value: number | null) => {
+  if (value === null) return '';
+  return `${value.toLocaleString('en-US')} ¥`;
+};
 defineExpose({ changeSysOptionsShowState });
 </script>
 
