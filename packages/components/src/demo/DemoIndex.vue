@@ -60,7 +60,7 @@ import type { MenuOption } from 'naive-ui';
 import { AliwangwangOutlined, CodeSandboxOutlined } from '@vicons/antd';
 import BaseLayout from '../components/layout/BaseLayout.vue';
 import SystemLogo from '../components/system-logo/SystemLogo.vue';
-import logoSvg from './logo.svg';
+import logoSvg from './logo.svg?component';
 import SysOptionsPanel from '../components/sysOptionsPanel/SysOptionsPanel.vue';
 
 defineOptions({

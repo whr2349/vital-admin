@@ -40,6 +40,5 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SysOptionsPanel: typeof import('./src/components/sysOptionsPanel/SysOptionsPanel.vue')['default']
-    SystemLogo: typeof import('./src/components/common/system-logo/SystemLogo.vue')['default']
   }
 }

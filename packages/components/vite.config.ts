@@ -18,7 +18,8 @@ import svgLoader from 'vite-svg-loader';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers';
-import { resolve } from 'path'
+import dts from 'vite-plugin-dts';
+import { resolve } from 'path';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -37,6 +38,7 @@ export default defineConfig({
     vueJsx(),
     UnoCSS(),
     svgLoader(),
+    dts({ rollupTypes: true }),
   ],
   resolve: {
     alias: {
@@ -46,7 +48,7 @@ export default defineConfig({
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, 'lib/main.js'),
+      entry: resolve(__dirname, 'src/main-lib.ts'),
       name: 'MyLib',
       // the proper extensions will be added
       fileName: 'my-lib',

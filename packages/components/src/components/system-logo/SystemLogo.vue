@@ -18,8 +18,20 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
-import type { SystemLogoAttr } from '@/types/components';
+import {type Ref, ref, watchEffect } from 'vue';
+declare namespace SystemLogoAttr {
+  type IProps = {
+    showTitle:boolean
+    // 宽度
+    systemLogoWidth: string
+    // 收起时宽度
+    systemLogoCollapseWidth: string
+  }
+  type IEmit = {
+    // 侧边栏收起事件
+    (event: 'onShowTitleChange', collapse: boolean): void
+  }
+}
 
 const emit = defineEmits<SystemLogoAttr.IEmit>();
 const props = withDefaults(defineProps<Partial<SystemLogoAttr.IProps>>(), {
@@ -28,7 +40,7 @@ const props = withDefaults(defineProps<Partial<SystemLogoAttr.IProps>>(), {
 watchEffect(() => {
   emit('onShowTitleChange', props.showTitle);
 });
-const showTitleRef = ref(props.showTitle);
+const showTitleRef:Ref = ref(props.showTitle);
 const showTitleChange = (value: boolean) => {
   console.log('showTitleChange:', value);
   showTitleRef.value = value;
