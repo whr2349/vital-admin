@@ -17,7 +17,7 @@
 - **代码规范**：丰富的规范插件及极高的代码规范
 
 
-## 其中包含无聊组件
+## 其中包含物料组件
 
 - [@whr2349/vital-material](https://github.com/whr2349/vital-admin/tree/master/packages/components): vital-admin 的物料组件，独立的布局组件，独立的 logo 组件
 
