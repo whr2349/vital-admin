@@ -19,7 +19,7 @@
 
 ## 其中包含物料组件
 
-- [@whr2349/vital-material](https://github.com/whr2349/vital-admin/tree/master/packages/components): vital-admin 的物料组件，独立的布局组件，独立的 logo 组件
+- [vital-material](https://github.com/whr2349/vital-admin/tree/master/packages/components): vital-admin 的物料组件，独立的布局组件，独立的 logo 组件
 
 
 ## 浏览器支持

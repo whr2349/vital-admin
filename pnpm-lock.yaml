@@ -93,7 +93,7 @@ importers:
 
   packages/vital-admin:
     dependencies:
-      '@whr2349/vital-material':
+      'vital-material':
         specifier: workspace:^
         version: link:../components
       pinia:

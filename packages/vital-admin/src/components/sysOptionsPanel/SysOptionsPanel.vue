@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { useBoolean } from '@whr2349/vital-material';
+import { useBoolean } from 'vital-material';
 defineOptions({
   name: 'SysOptionsPanel',
 });

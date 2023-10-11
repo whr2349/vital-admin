@@ -69,7 +69,7 @@ import { darkTheme, NIcon } from 'naive-ui'
 import type { GlobalTheme, MenuOption } from 'naive-ui'
 import { AliwangwangOutlined, CodeSandboxOutlined } from '@vicons/antd'
 import { useThemeStore } from '@/stores'
-import { BaseLayout, SystemLogo } from '@whr2349/vital-material'
+import { BaseLayout, SystemLogo } from 'vital-material'
 import SysOptionsPanel from '@/components/sysOptionsPanel/SysOptionsPanel.vue'
 import logoSvg from '@/assets/logo.svg';
 const theme = ref<GlobalTheme | null>(null)

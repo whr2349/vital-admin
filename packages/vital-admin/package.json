@@ -1,5 +1,5 @@
 {
-  "name": "@whr2349/vital-admin",
+  "name": "vital-admin",
   "version": "0.0.0",
   "private": false,
   "scripts": {
@@ -12,7 +12,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@whr2349/vital-material": "workspace:^",
+    "vital-material": "workspace:^",
     "pinia": "^2.1.4",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"

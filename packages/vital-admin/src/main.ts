@@ -18,7 +18,7 @@ import router from './router'
 // import 'vfonts/Lato.css'
 import 'vfonts/FiraCode.css'
 import 'virtual:uno.css'
-import '@whr2349/vital-material/style:style.css'
+import 'vital-material/style:style.css'
 // import '@/assets/style.css'
 const app = createApp(App)
 
