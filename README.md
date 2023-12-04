@@ -1,6 +1,6 @@
 <div align="center">
 	<img src="./packages/vital-admin/public/logo.svg" style="width: 160px;"/>
-	<h1>Soybean Admin</h1>
+	<h1>Vital Admin</h1>
 </div>
 
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE.txt) 
