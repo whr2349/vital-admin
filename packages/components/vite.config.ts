@@ -46,6 +46,7 @@ export default defineConfig({
     },
   },
   build: {
+    target: 'es2020', // 设置目标环境为 ES2020
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/main-lib.ts'),
