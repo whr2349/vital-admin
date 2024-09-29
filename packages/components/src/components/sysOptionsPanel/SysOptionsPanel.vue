@@ -1,5 +1,4 @@
 <!--language: Vue-->
-<!--language: Vue-->
 <template>
   <div class="">
     <n-drawer v-model:show="SysOptionsPanelShow" :width="300" placement="right">
