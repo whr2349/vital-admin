@@ -2,12 +2,46 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
+import navbar from "./navbar";
+import notes from "./notes";
 
 export default defineUserConfig({
   // 请不要忘记设置默认语言
   lang: "zh-CN",
+  title: "Vital-Admin",
+  description: "Vital-Admin前端快速开发模版工程与组件",
   theme: plumeTheme({
-    // more...
+    logo: "/logo.svg",
+    profile: {
+      name: "Theme Plume",
+    },
+    navbar,
+    notes,
+    plugins: {
+      comment: {
+        provider: "Giscus", // "Artalk“ | "Giscus" | "Twikoo" | "Waline"
+        comment: true,
+        repo: "whr2349/vital-admin",
+        repoId: "R_kgDOKJif0Q",
+        category: "General",
+        categoryId: "DIC_kwDOKJif0c4CjZZd",
+      },
+    },
   }),
   bundler: viteBundler(),
 });
+// <script src="https://giscus.app/client.js"
+//         data-repo="whr2349/vital-admin"
+//         data-repo-id="R_kgDOKJif0Q"
+//         data-category="General"
+//         data-category-id="DIC_kwDOKJif0c4CjZZd"
+//         data-mapping="pathname"
+//         data-strict="0"
+//         data-reactions-enabled="1"
+//         data-emit-metadata="0"
+//         data-input-position="bottom"
+//         data-theme="preferred_color_scheme"
+//         data-lang="zh-CN"
+//         crossOrigin="anonymous"
+//         async>
+// </script>

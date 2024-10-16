@@ -7,7 +7,8 @@ import * as clientConfig5 from 'D:/projects/my/vital-admin/packages/press/docs/.
 import * as clientConfig6 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/.temp/sass-palette/load-hope.js'
 import * as clientConfig7 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/.temp/md-enhance/config.js'
 import * as clientConfig8 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/.temp/md-power/config.js'
-import * as clientConfig9 from 'D:/projects/my/vital-admin/node_modules/.pnpm/vuepress-theme-plume@1.0.0-rc.107_@algolia+client-search@4.24.0_async-validator@4.2.5_axios@1_vtrfiggfn4i4xiptam7iprjrae/node_modules/vuepress-theme-plume/lib/client/config.js'
+import * as clientConfig9 from 'D:/projects/my/vital-admin/node_modules/.pnpm/@vuepress+plugin-comment@2.0.0-rc.53_typescript@5.1.6_vuepress@2.0.0-rc.15_@vuepress+bundler-_3556bgxu4apfg3xp6xrmd3qo64/node_modules/@vuepress/plugin-comment/lib/client/config.js'
+import * as clientConfig10 from 'D:/projects/my/vital-admin/node_modules/.pnpm/vuepress-theme-plume@1.0.0-rc.107_@algolia+client-search@4.24.0_async-validator@4.2.5_axios@1_ti56cfvni5cdpijuy74azwawtu/node_modules/vuepress-theme-plume/lib/client/config.js'
 
 export const clientConfigs = [
   clientConfig0,
@@ -20,4 +21,5 @@ export const clientConfigs = [
   clientConfig7,
   clientConfig8,
   clientConfig9,
+  clientConfig10,
 ].map((m) => m.default).filter(Boolean)
