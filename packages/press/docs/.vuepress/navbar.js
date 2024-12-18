@@ -14,7 +14,7 @@ export default defineNavbarConfig([
   },
   {
     text: "组件",
-    link: "/notes/components/布局/基本布局.md",
+    link: "/notes/components/布局/1.基本布局.md",
     icon: "lets-icons:materials",
     activeMatch: "^/components/",
   },

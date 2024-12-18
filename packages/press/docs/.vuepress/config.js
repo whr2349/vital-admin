@@ -26,6 +26,10 @@ export default defineUserConfig({
         category: "General",
         categoryId: "DIC_kwDOKJif0c4CjZZd",
       },
+      markdownEnhance: {
+        demo: true,
+        vuePlayground: true,
+      },
     },
   }),
   bundler: viteBundler(),
