@@ -1,5 +1,5 @@
 name: deploy-doc.yml
-
+run-name: ${{ github.actor }} 在pages中部署文档
 on:
   # 每当 push 到 main 分支时触发部署
   push:
@@ -16,7 +16,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           # 选择要使用的 pnpm 版本
-          # version: 8
+          version: 9.11.0
           # 使用 pnpm 安装依赖
           run_install: true
 
