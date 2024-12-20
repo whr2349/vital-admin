@@ -9,7 +9,7 @@ import * as clientConfig7 from 'D:/projects/my/vital-admin/packages/press/docs/.
 import * as clientConfig8 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/.temp/md-power/config.js'
 import * as clientConfig9 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/.temp/markdown-math/config.js'
 import * as clientConfig10 from 'D:/projects/my/vital-admin/node_modules/.pnpm/@vuepress+plugin-comment@2.0.0-rc.66_typescript@5.1.6_vuepress@2.0.0-rc.15_@vuepress+bundler-_tgqhanqys6nymdan236hwtstje/node_modules/@vuepress/plugin-comment/lib/client/config.js'
-import * as clientConfig11 from 'D:/projects/my/vital-admin/node_modules/.pnpm/vuepress-theme-plume@1.0.0-rc.121_@algolia+client-search@5.17.1_@vue+repl@4.4.2_async-validat_rpwcghp34xr3gq2afgroedeajq/node_modules/vuepress-theme-plume/lib/client/config.js'
+import * as clientConfig11 from 'D:/projects/my/vital-admin/node_modules/.pnpm/vuepress-theme-plume@1.0.0-rc.121_@algolia+client-search@5.17.1_@vue+repl@4.4.2_async-validat_ztxqyyb2avmgw6wpgjqm6sgvcq/node_modules/vuepress-theme-plume/lib/client/config.js'
 import * as clientConfig12 from 'D:/projects/my/vital-admin/packages/press/docs/.vuepress/client.js'
 
 export const clientConfigs = [

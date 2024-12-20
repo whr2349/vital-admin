@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "press dev": "pnpm -F press docs:dev",
-    "admin dev": "pnpm -F vital-admin dev",
-    "material dev": "pnpm -F vital-material dev",
+    "press:dev": "pnpm -F press docs:dev",
+    "admin:dev": "pnpm -F vital-admin dev",
+    "material:dev": "pnpm -F vital-material dev",
     "press:build": "pnpm -F press docs:build"
   },
   "keywords": [],

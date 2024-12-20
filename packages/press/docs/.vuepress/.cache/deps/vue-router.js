@@ -1,4 +1,7 @@
 import {
+  setupDevtoolsPlugin
+} from "./chunk-TZVVFA3W.js";
+import {
   computed,
   defineComponent,
   getCurrentInstance,
@@ -17,12 +20,9 @@ import {
   watch,
   watchEffect
 } from "./chunk-ACQKINJU.js";
-import {
-  setupDevtoolsPlugin
-} from "./chunk-TZVVFA3W.js";
 import "./chunk-NSBPE2FW.js";
 
-// ../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.10_typescript@5.1.6_/node_modules/vue-router/dist/vue-router.mjs
+// ../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.13_typescript@5.1.6_/node_modules/vue-router/dist/vue-router.mjs
 var isBrowser = typeof document !== "undefined";
 function isRouteComponent(component) {
   return typeof component === "object" || "displayName" in component || "props" in component || "__vccOpts" in component;

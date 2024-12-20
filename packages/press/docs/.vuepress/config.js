@@ -33,7 +33,22 @@ export default defineUserConfig({
       },
     },
   }),
-  bundler: viteBundler(),
+  bundler: viteBundler({
+    viteOptions: {
+      // resolve: {
+      //   alias: {
+      //     'swiper/modules': 'swiper/modules'
+      //   }
+      // },
+      // optimizeDeps: {
+      //   include: ['swiper/modules']
+      // },
+      // ssr: {
+      //   // 将可能会使用到 window 对象的依赖添加到 noExternal 中
+      //   noExternal: ['vue-router', 'swiper', '@vue/repl']
+      // }
+    }
+  }),
 });
 // <script src="https://giscus.app/client.js"
 //         data-repo="whr2349/vital-admin"
