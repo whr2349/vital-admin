@@ -8,7 +8,7 @@ import notes from "./notes";
 export default defineUserConfig({
   // 请不要忘记设置默认语言
   lang: "zh-CN",
-  base: "/Vital-Admin/",
+  base: "/vital-admin/",
   title: "Vital-Admin",
   description: "Vital-Admin前端快速开发模版工程与组件",
   theme: plumeTheme({
