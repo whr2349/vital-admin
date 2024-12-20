@@ -7,8 +7,9 @@
 
 ## 简介
 
-[vital-admin](https://github.com/whr2349/vital-admin/tree/master) 是一个基于 Vue3、Vite3、TypeScript、NaiveUI、Pinia 和 UnoCSS 的清新优雅的中后台模版，它使用了最新流行的前端技术栈，开箱即用的中后台前端解决方案，也可用于学习参考。
+[vital-admin](https://github.com/whr2349/vital-admin/tree/master) 是一个基于 Vue3、Vite3、TypeScript、NaiveUI、Pinia 和 UnoCSS 的清新优雅的中后台模版，它使用了最新流行的前端技术栈，开箱即用的中后台前端解决方案，也可用于学习参考。   
 
+参考文档地址：https://whr2349.github.io/vital-admin/
 ## 特性
 
 - **最新流行技术栈**：使用 Vue3/Vite 等前端前沿技术开发, 使用高效率的 npm 包管理器 pnpm
