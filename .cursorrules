@@ -1,0 +1,25 @@
+# 项目：vital-admin是一个基于 Vue3、Vite3、TypeScript、NaiveUI、Pinia 和 UnoCSS 
+# 的清新优雅的中后台前端开发模版,它使用了最新流行的前端技术栈,开箱即用,也可用于学习参考。
+# 也包含一个物料组件库项目和vuepress开发的文档项目。
+#
+# 技术栈：
+- lerna进行发版。
+- pnpm进行包管理。
+- vue3、vite3、typescript、naiveui、pinia、unocss、vuepress、pnpm、lerna。
+#
+# 文件结构：
+- packages/vital-admin: 项目主文件夹,包含项目主文件。
+- packages/components: 物料组件库项目,包含物料组件。
+- packages/press: 文档项目,包含文档。
+#
+# 编码标准：
+- 缩进使用2个空格。
+- TypeScript中接口命名采用 PascalCase,以“I”开头,如“ICustomer”。
+- Vue组件命名采用 PascalCase,如“UserInfo.vue”。
+- 函数和组件注释应包含功能描述、参数说明和返回值说明。
+- 使用 UnoCSS 的原子化类进行样式管理,避免复杂的嵌套样式。
+- 使用 NaiveUI 的组件,尽量避免使用原生 HTML 和 CSS。
+- 使用 Pinia 进行状态管理,尽量避免使用全局变量。
+- 使用 Vue Router 进行路由管理,尽量避免使用全局变量。
+- 使用 Vue 3 的新特性,如<script setup>,避免使用 Vue 2 的选项式 API。
+
