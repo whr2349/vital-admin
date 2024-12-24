@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": ">=16",
-    "pnpm": ">=8"
+    "node": ">=18.20.5",
+    "pnpm": ">=9.11.0"
   },
   "devDependencies": {
     "lerna": "^7.1.4"
