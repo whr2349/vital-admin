@@ -9,9 +9,9 @@
       <template #logo>
         <SystemLogo ref="logoRef">
           <template #logoImg>
-            <logoSvg class="h-5 justify-center"></logoSvg>
+            <logoSvg class="h-24 justify-center"></logoSvg>
           </template>
-          <div class="text-dark text-lg">viatl-admin</div>
+          <div class="text-dark text-20">viatl-admin</div>
         </SystemLogo>
       </template>
       <template #sidebar>

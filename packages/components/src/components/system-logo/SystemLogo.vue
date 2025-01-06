@@ -10,27 +10,27 @@
 -->
 <template>
   <div class="flex items-center justify-center h-full overflow-hidden">
-    <slot name="logoImg"> </slot>
-    <h2 class="ml-3" v-show="showTitleRef">
+    <slot name="logoImg"></slot>
+    <div class="ml-10" v-show="showTitleRef">
       <slot></slot>
-    </h2>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {type Ref, ref, watchEffect } from 'vue';
+import { type Ref, ref, watchEffect } from 'vue';
 declare namespace SystemLogoAttr {
   type IProps = {
-    showTitle:boolean
+    showTitle: boolean;
     // 宽度
-    systemLogoWidth: string
+    systemLogoWidth: string;
     // 收起时宽度
-    systemLogoCollapseWidth: string
-  }
+    systemLogoCollapseWidth: string;
+  };
   type IEmit = {
     // 侧边栏收起事件
-    (event: 'onShowTitleChange', collapse: boolean): void
-  }
+    (event: 'onShowTitleChange', collapse: boolean): void;
+  };
 }
 
 const emit = defineEmits<SystemLogoAttr.IEmit>();
@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<Partial<SystemLogoAttr.IProps>>(), {
 watchEffect(() => {
   emit('onShowTitleChange', props.showTitle);
 });
-const showTitleRef:Ref = ref(props.showTitle);
+const showTitleRef: Ref = ref(props.showTitle);
 const showTitleChange = (value: boolean) => {
   console.log('showTitleChange:', value);
   showTitleRef.value = value;

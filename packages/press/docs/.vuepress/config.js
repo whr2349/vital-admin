@@ -4,6 +4,7 @@ import { defineUserConfig } from "vuepress";
 import { plumeTheme } from "vuepress-theme-plume";
 import navbar from "./navbar";
 import notes from "./notes";
+import UnoCSS from 'unocss/vite';
 
 export default defineUserConfig({
   // 请不要忘记设置默认语言
@@ -35,20 +36,12 @@ export default defineUserConfig({
   }),
   bundler: viteBundler({
     viteOptions: {
-      // resolve: {
-      //   alias: {
-      //     'swiper/modules': 'swiper/modules'
-      //   }
-      // },
-      // optimizeDeps: {
-      //   include: ['swiper/modules']
-      // },
-      // ssr: {
-      //   // 将可能会使用到 window 对象的依赖添加到 noExternal 中
-      //   noExternal: ['vue-router', 'swiper', '@vue/repl']
-      // }
-    }
+      plugins: [
+        UnoCSS(),
+      ],
+    },
   }),
+  // plugins: [vuepresspluginunocss],
 });
 // <script src="https://giscus.app/client.js"
 //         data-repo="whr2349/vital-admin"

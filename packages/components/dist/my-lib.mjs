@@ -460,7 +460,7 @@ const xe = "span", Be = x({
       ])
     ], 2));
   }
-}), _e = { class: "flex items-center justify-center h-full overflow-hidden" }, ke = { class: "ml-3" }, Te = /* @__PURE__ */ x({
+}), _e = { class: "flex items-center justify-center h-full overflow-hidden" }, ke = { class: "ml-10" }, Te = /* @__PURE__ */ x({
   __name: "SystemLogo",
   props: {
     showTitle: { type: Boolean, default: !0 },
@@ -480,7 +480,7 @@ const xe = "span", Be = x({
       }
     }), (r, i) => (c(), h("div", _e, [
       g(r.$slots, "logoImg"),
-      G(B("h2", ke, [
+      G(B("div", ke, [
         g(r.$slots, "default")
       ], 512), [
         [J, s.value]

@@ -9,7 +9,7 @@
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved. 
 -->
 <script setup lang="ts">
-import DemoIndex from './demo/DemoIndex.vue'
+import DemoIndex from './demo/DemoIndex.vue';
 </script>
 
 <template>

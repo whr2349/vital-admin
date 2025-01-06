@@ -1,44 +1,41 @@
 {
-  "hash": "7d2b5349",
-  "configHash": "4157f6db",
-  "lockfileHash": "8748ccbb",
-  "browserHash": "2f84d716",
+  "hash": "6de2ad57",
+  "configHash": "2664a2f7",
+  "lockfileHash": "0191b297",
+  "browserHash": "2cbe0a9a",
   "optimized": {
     "@vue/repl": {
       "src": "../../../../../../node_modules/.pnpm/@vue+repl@4.4.2/node_modules/@vue/repl/dist/vue-repl.js",
       "file": "@vue_repl.js",
-      "fileHash": "865a8fa8",
+      "fileHash": "e845f58b",
       "needsInterop": false
     },
     "@vue/devtools-api": {
-      "src": "../../../../../../node_modules/.pnpm/@vue+devtools-api@6.6.4/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "src": "../../../../../../node_modules/.pnpm/@vue+devtools-api@7.6.8/node_modules/@vue/devtools-api/dist/index.js",
       "file": "@vue_devtools-api.js",
-      "fileHash": "0ba1b4b5",
+      "fileHash": "85b14d37",
       "needsInterop": false
     },
     "@vuepress/shared": {
-      "src": "../../../../../../node_modules/.pnpm/@vuepress+shared@2.0.0-rc.15/node_modules/@vuepress/shared/dist/index.js",
+      "src": "../../../../../../node_modules/.pnpm/@vuepress+shared@2.0.0-rc.19/node_modules/@vuepress/shared/dist/index.js",
       "file": "@vuepress_shared.js",
-      "fileHash": "9acafb77",
+      "fileHash": "f235787a",
       "needsInterop": false
     },
     "vue": {
       "src": "../../../../../../node_modules/.pnpm/vue@3.5.10_typescript@5.1.6/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "c4aea715",
+      "fileHash": "99c19998",
       "needsInterop": false
     },
     "vue-router": {
-      "src": "../../../../../../node_modules/.pnpm/vue-router@4.4.5_vue@3.5.13_typescript@5.1.6_/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "src": "../../../../../../node_modules/.pnpm/vue-router@4.5.0_vue@3.5.13_typescript@5.1.6_/node_modules/vue-router/dist/vue-router.esm-bundler.js",
       "file": "vue-router.js",
-      "fileHash": "7c181fd9",
+      "fileHash": "18cfebd3",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-TZVVFA3W": {
-      "file": "chunk-TZVVFA3W.js"
-    },
     "chunk-ACQKINJU": {
       "file": "chunk-ACQKINJU.js"
     },

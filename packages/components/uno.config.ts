@@ -8,7 +8,8 @@
  *
  * Copyright (c) 2023 by ${git_name_email}, All Rights Reserved.
  */
-import { defineConfig } from 'unocss'
+import { defineConfig, presetAttributify, presetUno } from 'unocss';
+import presetRemToPx from '@unocss/preset-rem-to-px';
 
 export default defineConfig({
   // ...UnoCSS选项
@@ -17,8 +18,15 @@ export default defineConfig({
     colors: {
       veryCool: '#0000ff', // class="text-very-cool"
       brand: {
-        primary: 'hsla(var(--hue, 217), 78%, 51%)' //class="bg-brand-primary"
-      }
-    }
-  }
-})
+        primary: 'hsla(var(--hue, 217), 78%, 51%)', //class="bg-brand-primary"
+      },
+    },
+  },
+  presets: [
+    presetAttributify(),
+    presetUno(),
+    presetRemToPx({
+      baseFontSize: 4,
+    }),
+  ],
+});

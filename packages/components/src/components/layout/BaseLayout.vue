@@ -80,34 +80,34 @@ import { Icon } from '@vicons/utils';
 declare namespace LayoutAttr {
   type IProps = {
     // 侧边栏宽度
-    sidebarWidth: string
+    sidebarWidth: string;
     // 侧边栏收起时宽度
-    sidebarCollapseWidth: string
+    sidebarCollapseWidth: string;
     // 头部高度
-    headHeight: string
+    headHeight: string;
     // 底部高度
-    footHeight: string
+    footHeight: string;
     // 是否显示收起、展开按钮
-    showSidebarCollapseButton: boolean
+    showSidebarCollapseButton: boolean;
     // 是否显示右侧边框
-    showSidebarRightBorder: boolean
+    showSidebarRightBorder: boolean;
     // 是否显示底部边框
-    showLogoBottomBorder: boolean
+    showLogoBottomBorder: boolean;
     // 是否显示右部边框
-    showLogoRightBorder: boolean
+    showLogoRightBorder: boolean;
     // 是否显示头部边框
-    showHeadBottomBorder: boolean
+    showHeadBottomBorder: boolean;
     // 是否显示底部边框
-    showFootTopBorder: boolean
+    showFootTopBorder: boolean;
     // 布局模式
-    layoutMode: 'vertical' | 'horizontal'
+    layoutMode: 'vertical' | 'horizontal';
     // 主题模式
-    themeMode: 'light' | 'dark'
-  }
+    themeMode: 'light' | 'dark';
+  };
   type IEmit = {
     // 侧边栏收起事件
-    (event: 'onSidebarCollapseChange', collapse: boolean): void
-  }
+    (event: 'onSidebarCollapseChange', collapse: boolean): void;
+  };
 }
 // 组件初始化，设置默认的logo和head为同样的高度60px，foot高度40px，sidebar宽度200px
 // props 设置默认值
@@ -150,7 +150,7 @@ const footStyle = computed(() => {
 const sidebarCollapseLock = ref(false);
 /**
  * 控制侧边收起展开
- * @param isCollapse 
+ * @param isCollapse
  */
 const sidebarCollapseHandler = (isCollapse: boolean) => {
   sidebarCollapseLock.value = isCollapse;
