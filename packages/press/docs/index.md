@@ -19,3 +19,9 @@ config:
           text: Github
           link: https://github.com/whr2349/vital-admin
 ---
+<style>
+.container {
+  max-width: none !important;
+  width: 100% !important;
+}
+</style>
