@@ -22,7 +22,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/vital-material"
+      "packages/*"
     ],
     "version": "independent"
   }
