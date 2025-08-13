@@ -13,11 +13,11 @@
   "author": "whr2349",
   "license": "ISC",
   "devDependencies": {
+    "@unocss/preset-rem-to-px": "^0.64.0",
     "@vuepress/bundler-vite": "2.0.0-rc.19",
     "@vuepress/theme-default": "2.0.0-rc.49",
     "sass-embedded": "^1.79.4",
     "unocss": "^0.64.0",
-    "@unocss/preset-rem-to-px": "^0.64.0",
     "vue": "^3.5.10",
     "vuepress": "2.0.0-rc.19",
     "vuepress-theme-plume": "1.0.0-rc.121"

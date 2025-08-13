@@ -1,6 +1,6 @@
 {
   "name": "vital-admin",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "dev": "vite",
@@ -12,8 +12,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vital-material": "workspace:^",
     "pinia": "^2.1.4",
+    "vital-material": "workspace:^",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },
