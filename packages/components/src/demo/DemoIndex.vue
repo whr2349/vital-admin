@@ -42,9 +42,8 @@
         </div>
       </template>
       <template #main>
-        <div class="h-full">
+        <div class="h-full overflow-auto">
           <button @click="btnClickHandler">api调用侧边栏展开和收起</button>
-          <div v-for="key in 100" :key="key">sidebar</div>
         </div>
       </template>
       <template #foot>foot</template>

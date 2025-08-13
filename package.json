@@ -19,5 +19,11 @@
   },
   "devDependencies": {
     "lerna": "^7.1.4"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/vital-material"
+    ],
+    "version": "independent"
   }
 }
